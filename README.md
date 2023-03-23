@@ -1,1 +1,1 @@
-# .scripts_templates
+# scripts
