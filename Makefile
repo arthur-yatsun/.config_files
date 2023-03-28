@@ -22,7 +22,7 @@ install:
 
 test:
 	@echo "Run tests"
-	PYTHONPATH=. pytest ./tests -s --disable-warnings --log-cli-level=WARNING --cov=.
+	PYTHONPATH=. pytest ./tests -s --disable-warnings --log-cli-level=WARNING --cov-fail-under=100 --cov=.
 
 coverage-html-report:
 	@echo "Run test with coverage HTML report"
