@@ -1,7 +1,6 @@
 # set up test/local variables
 # include cli_scripts/local_config.sh
 
-
 install:
 	@echo "Install dependencies"
 	pip install -r requirements.txt
@@ -25,14 +24,14 @@ test:
 	PYTHONPATH=. pytest ./tests -s --disable-warnings --log-cli-level=WARNING --cov-fail-under=100 --cov=.
 
 coverage-html-report:
-	@echo "Run test with coverage HTML report"
+	@echo "Run tests with coverage HTML report"
 	PYTHONPATH=. pytest ./tests -s --disable-warnings --log-cli-level=WARNING --cov=. --cov-report html
 
 lint:
 	@echo "Check code style"
 	flake8 . --max-complexity=10 --statistics --count
 
-run:
+format:
 	@echo "Format python code"
 	black .
 
