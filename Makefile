@@ -41,3 +41,11 @@ package:
 	python setup.py sdist
 	# build wheel
 	python setup.py bdist_wheel
+
+publish:
+	@echo "Publish packages"
+	@make install
+	@make test && make lint
+	@echo "Removing old distributions"; if [ -d "./dist" ]; then rm -rf ./dist; fi
+	@make package
+	@ ./cli_scripts/publish_sources.sh
