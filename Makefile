@@ -26,6 +26,7 @@ test:
 coverage-html-report:
 	@echo "Run tests with coverage HTML report"
 	PYTHONPATH=. pytest ./tests -s --disable-warnings --log-cli-level=WARNING --cov=. --cov-report html
+	open htmlcov/index.html
 
 lint:
 	@echo "Check code style"
